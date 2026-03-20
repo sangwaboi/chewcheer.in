@@ -1,5 +1,6 @@
 
 import Header from './components/layout/Header.tsx'
+import Countdown from './components/layout/Countdown.tsx'
 import Hero from './components/section/Hero.tsx'
 import ProductSection from './components/section/ProductSection.tsx'
 import MiloChat from './components/section/MiloChat.tsx'
@@ -39,17 +40,20 @@ const App = () => {
           </defs>
         </svg>
       </div>
-      <div>
+      <div className='sticky top-0 z-50'>
+        <Countdown />
         <Header />
-        <div className='pt-20'>
+      </div>
+      <div>
+        <div>
           <Hero />
         </div>
         <div>
           <ProductSection />
         </div>
-        <Review/>
+        <Review />
         <div className='p-5'>
-          
+
         </div>
         <MiloChat />
       </div>
