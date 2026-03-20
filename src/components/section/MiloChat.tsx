@@ -11,7 +11,7 @@ const MiloChat = () => {
     ];
 
     return (
-        <section className="w-full bg-[#F5F5F5] font-[Spinnaker]">
+        <section className="w-full min-w-0 bg-[#F5F5F5] font-[Spinnaker]">
             {/* Main Content Area */}
             <div className="relative w-full">
                 {/* Tan/Beige band background */}

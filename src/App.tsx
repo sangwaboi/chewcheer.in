@@ -6,9 +6,16 @@ import MiloChat from './components/section/MiloChat.tsx'
 import Review from './components/section/Review.tsx'
 const App = () => {
   return (
-    <div className='relative'>
-      <div className='absolute top-0 left-0 w-full -z-10'>
-        <svg width="1512" height="573" viewBox="0 0 1512 573" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <div className='relative min-w-0 overflow-x-hidden'>
+      <div className='absolute top-0 left-0 w-full -z-10 min-w-0'>
+        <svg
+          className="block h-auto w-full min-w-0"
+          viewBox="0 0 1512 573"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          preserveAspectRatio="xMidYMid slice"
+          aria-hidden
+        >
           <g filter="url(#filter0_d_218_51)">
             <path d="M1512 143.46H0C0 143.46 0 369.438 0 451.231C283.763 491.915 476.641 576.925 774.5 517.046C931.184 485.548 928.5 451.612 1134 438.677C1339.5 425.742 1512 517.046 1512 517.046V143.46Z" fill="#D7E8BA" />
           </g>
@@ -16,8 +23,8 @@ const App = () => {
             <path d="M0 -238H1512C1512 -238 1512 211.336 1512 368.421C1431.5 449.52 1234.62 554 1087 554C840.927 554 622.675 411.88 380.5 382.605C175 357.764 0 479.476 0 479.476V-238Z" fill="#4F815E" />
           </g>
           <defs>
-            <filter id="filter0_d_218_51" x="-15" y="132.46" width="1542" height="424.289" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-              <feFlood flood-opacity="0" result="BackgroundImageFix" />
+            <filter id="filter0_d_218_51" x="-15" y="132.46" width="1542" height="424.289" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+              <feFlood floodOpacity="0" result="BackgroundImageFix" />
               <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
               <feOffset dy="4" />
               <feGaussianBlur stdDeviation="7.5" />
@@ -26,8 +33,8 @@ const App = () => {
               <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_218_51" />
               <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_218_51" result="shape" />
             </filter>
-            <filter id="filter1_d_218_51" x="-15" y="-249" width="1542" height="822" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-              <feFlood flood-opacity="0" result="BackgroundImageFix" />
+            <filter id="filter1_d_218_51" x="-15" y="-249" width="1542" height="822" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+              <feFlood floodOpacity="0" result="BackgroundImageFix" />
               <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
               <feOffset dy="4" />
               <feGaussianBlur stdDeviation="7.5" />
@@ -39,7 +46,7 @@ const App = () => {
           </defs>
         </svg>
       </div>
-      <div>
+      <div className="min-w-0">
         <Header />
         <div className='pt-20'>
           <Hero />

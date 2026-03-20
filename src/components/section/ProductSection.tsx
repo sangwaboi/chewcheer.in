@@ -10,7 +10,7 @@ const ProductSection = () => {
 
   return (
     <section id="shop" className="w-full bg-[#F5F5F5] py-20 px-6 font-[Spinnaker]">
-      <div className="max-w-6xl mx-auto bg-[#DDE5E0] rounded-3xl p-10">
+      <div className="max-w-6xl mx-auto min-w-0 bg-[#DDE5E0] rounded-3xl p-5 md:p-10">
 
         {/* GRID */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
@@ -34,7 +34,7 @@ const ProductSection = () => {
               for better digestion & happier dogs
             </p>
 
-            <h2 className="text-6xl font-bold tracking-wider font-[Talina] text-[#66261E]">
+            <h2 className="text-4xl font-bold tracking-wider font-[Talina] text-[#66261E] sm:text-5xl md:text-6xl">
               Prebiotic Inulin Sticks
             </h2>
 
@@ -53,16 +53,16 @@ const ProductSection = () => {
               className={`mt-6 border-2 rounded-xl p-5 cursor-pointer transition-colors ${selectedPlan === "subscribe" ? "border-[#66261E] bg-[#F3E1DE]" : "border-gray-200 bg-white"
                 }`}
             >
-              <div className="flex items-center justify-between">
-                <div className="flex items-center gap-3">
-                  <span className={`w-5 h-5 rounded-full border-2 flex items-center justify-center ${selectedPlan === "subscribe" ? "border-[#66261E]" : "border-gray-400"
+              <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+                <div className="flex min-w-0 flex-wrap items-center gap-2 sm:gap-3">
+                  <span className={`w-5 h-5 shrink-0 rounded-full border-2 flex items-center justify-center ${selectedPlan === "subscribe" ? "border-[#66261E]" : "border-gray-400"
                     }`}>
                     {selectedPlan === "subscribe" && <span className="w-2.5 h-2.5 rounded-full bg-[#66261E]" />}
                   </span>
                   <span className="text-lg font-bold">Subscribe</span>
                   <span className="bg-[#66261E] text-white text-xs font-bold px-3 py-1 rounded-md">SAVE 10%</span>
                 </div>
-                <div className="flex items-center gap-2">
+                <div className="flex shrink-0 items-center gap-2 sm:ml-auto">
                   <span className="text-sm text-gray-400 line-through">₹369</span>
                   <span className="text-2xl font-bold">₹332</span>
                 </div>
@@ -79,7 +79,7 @@ const ProductSection = () => {
                   <p className="mt-3 text-xs text-gray-600">
                     Subscribe and Save 30% OFF your first order and get 10% OFF on all recurring orders.
                   </p>
-                  <div className="flex justify-around mt-6 font-bold text-[10px]">
+                  <div className="mt-6 flex flex-wrap justify-center gap-3 font-bold text-[10px] sm:justify-around sm:gap-0">
                     <span className="w-[70px] text-center">your dog never misses a day</span>
                     <span className="w-[70px] text-center">fast,free delivery</span>
                     <span className="w-[70px] text-center">our best prices, always</span>
@@ -95,27 +95,27 @@ const ProductSection = () => {
               className={`mt-4 border-2 rounded-xl p-5 cursor-pointer transition-colors ${selectedPlan === "one-time" ? "border-[#66261E] bg-[#F3E1DE]" : "border-gray-200 bg-white"
                 }`}
             >
-              <div className="flex items-center justify-between">
+              <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
                 <div className="flex items-center gap-3">
-                  <span className={`w-5 h-5 rounded-full border-2 flex items-center justify-center ${selectedPlan === "one-time" ? "border-[#66261E]" : "border-gray-400"
+                  <span className={`w-5 h-5 shrink-0 rounded-full border-2 flex items-center justify-center ${selectedPlan === "one-time" ? "border-[#66261E]" : "border-gray-400"
                     }`}>
                     {selectedPlan === "one-time" && <span className="w-2.5 h-2.5 rounded-full bg-[#66261E]" />}
                   </span>
                   <span className="text-lg font-bold">One-Time Purchase</span>
                 </div>
-                <span className="text-2xl font-bold">₹369</span>
+                <span className="text-2xl font-bold sm:ml-auto">₹369</span>
               </div>
             </div>
 
             {/* 🔥 QUANTITY */}
-            <div className="flex items-center gap-3 mt-6">
-              <div className="flex items-center gap-4 bg-white px-4 py-2 rounded-3xl">
-                <button onClick={() => setQty(Math.max(1, qty - 1))} className="cursor-pointer">-</button>
+            <div className="mt-6 flex min-w-0 flex-col gap-3 sm:flex-row sm:items-center">
+              <div className="flex items-center justify-center gap-4 bg-white px-4 py-2 rounded-3xl sm:justify-start">
+                <button type="button" onClick={() => setQty(Math.max(1, qty - 1))} className="min-h-[44px] min-w-[44px] cursor-pointer">-</button>
                 <span>{qty}</span>
-                <button onClick={() => setQty(qty + 1)} className="cursor-pointer">+</button>
+                <button type="button" onClick={() => setQty(qty + 1)} className="min-h-[44px] min-w-[44px] cursor-pointer">+</button>
               </div>
 
-              <button className="flex-1 bg-[#66261E] text-white py-3 rounded-3xl cursor-pointer">
+              <button type="button" className="min-h-[44px] w-full flex-1 bg-[#66261E] text-white py-3 rounded-3xl cursor-pointer sm:w-auto">
                 Add to cart
               </button>
             </div>
@@ -123,12 +123,13 @@ const ProductSection = () => {
         </div>
 
         {/* 🔥 TABS */}
-        <div className="mt-12 border-b flex gap-6 font-bold justify-around">
+        <div className="mt-12 flex flex-wrap justify-center gap-x-4 gap-y-2 border-b font-bold sm:justify-around sm:gap-6">
           {tabs.map((tab) => (
             <button
+              type="button"
               key={tab}
               onClick={() => setActiveTab(tab)}
-              className={`pb-2 cursor-pointer ${activeTab === tab ? "border-b-2 border-[#66261E]" : ""
+              className={`pb-2 text-xs cursor-pointer sm:text-base ${activeTab === tab ? "border-b-2 border-[#66261E]" : ""
                 }`}
             >
               {tab.toUpperCase()}
