@@ -166,29 +166,35 @@ const Review = () => {
             </div>
 
             {/* From tummy troubles to tail wags */}
-            <div className='w-screen relative left-1/2 -translate-x-1/2 bg-[#F5F5F5] py-20 mt-20'>
-                <div className='max-w-5xl mx-auto px-6'>
+            <div className='w-screen relative left-1/2 -translate-x-1/2 bg-[#F5F5F5] py-20 mt-20 overflow-hidden'>
+                {/* Sad dog - positioned absolutely at the left edge */}
+                <div className='absolute left-30 top-1/2 -translate-y-1/2 w-[240px] h-[240px] flex items-center justify-center'>
+                    <img src={saddog} alt=""/>
+                </div>
+
+                {/* Happy dog - positioned absolutely at the right edge */}
+                <div className='absolute right-30 top-1/2 -translate-y-1/2 w-[240px] h-[240px] flex items-center justify-center'>
+                    <img src={happydog} alt="" />
+                </div>
+
+                <div className='max-w-3xl mx-auto px-6'>
                     {/* Title */}
-                    <h2 className='font-[Talina] text-center text-[26px] leading-snug tracking-wider text-[#C97064] md:text-[40px] md:leading-tight'>
+                    <h2 className='font-[Talina] text-[40px] text-[#C97064] text-center leading-tight tracking-wider'>
                         From tummy troubles to tail wags
                     </h2>
 
                     {/* Comparison Grid */}
-                    <div className='grid grid-cols-1 md:grid-cols-[1fr_auto_1fr] gap-10 md:gap-6 items-center mt-14'>
+                    <div className='grid grid-cols-[1fr_auto_1fr] gap-6 items-center mt-14'>
 
-                        {/* LEFT: Before */}
-                        <div className='flex items-center gap-4'>
-                            {/* Sad dog SVG placeholder */}
-                            <div className='w-[140px] h-[140px] shrink-0 flex items-center justify-center'>
-                                <span className='text-gray-400 text-xs text-center font-[Spinnaker]'><img src={saddog} alt="" /></span>
-                            </div>
+                        {/* LEFT: Before (text only) */}
+                        <div className='flex items-center justify-center'>
                             <div>
                                 <p className='font-[Spinnaker] text-xl text-gray-500 font-bold mb-4 text-nowrap'>You've probably noticed this...</p>
-                                <ul className='space-y-2 font-[Spinnaker] text-sm text-gray-500'>
-                                    <li>Tummy acting weird</li>
-                                    <li>Poop all over the place</li>
-                                    <li>Gassy after meals</li>
-                                    <li>Low energy days</li>
+                                <ul className='space-y-2 text-center font-[Spinnaker] text-sm text-gray-500'>
+                                    <div>Tummy acting weird</div>
+                                    <div>Poop all over the place</div>
+                                    <div>Gassy after meals</div>
+                                    <div>Low energy days</div>
                                 </ul>
                             </div>
                         </div>
@@ -203,30 +209,28 @@ const Review = () => {
                             <p className='font-[Cookie] text-[20px] text-[#4F815E] mt-2'>This is where it changes</p>
                         </div>
 
-                        {/* RIGHT: After */}
-                        <div className='flex items-center gap-4'>
+                        {/* RIGHT: After (text only) */}
+                        <div className='flex items-center justify-center'>
                             <div>
-                                <p className='font-[Spinnaker] text-xl text-[#4F815E] font-bold mb-4'>This is how it should be.</p>
-                                <ul className='space-y-4 font-[Spinnaker] text-sm text-[#4F815E] font-semibold'>
-                                    <li>Smooth, easy digestion</li>
-                                    <li>Consistent, healthy poop</li>
-                                    <li>More energy, more play</li>
-                                    <li>Tail that won't stop wagging</li>
+                                <p className='font-[Spinnaker] text-xl text-nowrap text-[#4F815E] font-bold mb-4'>This is how it should be.</p>
+                                <ul className='space-y-4 font-[Spinnaker] text-center text-sm text-[#4F815E] font-semibold'>
+                                    <div>Smooth, easy digestion</div>
+                                    <div>Consistent, healthy poop</div>
+                                    <div>More energy, more play</div>
+                                    <div>Tail that won't stop wagging</div>
                                 </ul>
-                            </div>
-                            {/* Happy dog SVG placeholder */}
-                            <div className='w-[140px] h-[140px] shrink-0 flex items-center justify-center'>
-                                <span className='text-gray-400 text-xs text-center font-[Spinnaker]'><img src={happydog} alt="" /></span>
                             </div>
                         </div>
                     </div>
 
                     {/* Buy button */}
-                    <div className='flex justify-center mt-14'>
-                        <button className='flex flex-row items-center gap-x-2 font-[Talina] bg-[#4F815E] text-[26px] text-white px-6 py-3 rounded-[10px] leading-[100%] tracking-0% font-light cursor-pointer'>
-                            Buy chewcheer
-                            <ArrowRight strokeWidth={2.5} />
-                        </button>
+                    <div className='flex justify-center mt-30 '>
+                        <a href="#shop">
+                            <button className='flex flex-row items-center gap-x-2 font-[Talina] bg-[#4F815E] text-[26px] text-white px-6 py-3 rounded-[10px] leading-[100%] tracking-0% font-light cursor-pointer'>
+                                Buy chewcheer
+                                <ArrowRight strokeWidth={2.5} />
+                            </button>
+                        </a>
                     </div>
                 </div>
             </div>
