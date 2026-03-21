@@ -5,6 +5,7 @@ import Hero from './components/section/Hero.tsx'
 import ProductSection from './components/section/ProductSection.tsx'
 import MiloChat from './components/section/MiloChat.tsx'
 import Review from './components/section/Review.tsx'
+import greenPaw from "./assets/Group (5).png"
 const App = () => {
   return (
     <div className='relative min-w-0 overflow-x-clip'>
@@ -46,23 +47,47 @@ const App = () => {
             </filter>
           </defs>
         </svg>
+        
       </div>
+      <div className='absolute w-[200px]'>
+          <img src={greenPaw} alt="" className='absolute translate-x-60 translate-y-110 rotate-[-17deg] -z-100'/>
+        </div>
       <div className='sticky top-0 z-50'>
         <Countdown />
         <Header />
       </div>
-      <div>
+      <div className='relative'>
+        <div className='absolute w-[600px]'>
+          <img src={greenPaw} alt="" className='absolute translate-x-70 -translate-y-22 -z-10'/>
+
+        </div>
+        
+        <div className='absolute w-[350px]'>
+          <img src={greenPaw} alt="" className='absolute rotate-45 -translate-y-15 -translate-x-40 -z-10'/>
+
+        </div>
+
+        <div className='absolute w-[400px]'>
+          <img src={greenPaw} alt="" className='absolute rotate-20 translate-x-315'/>
+
+        </div>
         <div>
           <Hero />
         </div>
+      
+
         <div>
           <ProductSection />
         </div>
-        <Review />
-        <div className='p-5'>
 
+        <div>
+          <Review />
         </div>
-        <MiloChat />
+
+        <div>
+          <MiloChat />
+        </div>
+
       </div>
 
 

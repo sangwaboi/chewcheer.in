@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { ArrowRight } from 'lucide-react';
 import milo from '../../assets/Ellipse 5.png'
+import paw1 from '../../assets/Group (4).png'
 const MiloChat = () => {
     const [message, setMessage] = useState('');
 
@@ -15,21 +16,15 @@ const MiloChat = () => {
             {/* Main Content Area */}
             <div className="relative w-full">
                 {/* Tan/Beige band background */}
-                <div className="absolute inset-0 bg-linear-to-r from-[#D4A96A] via-[#D4A96A] to-[#D4A96A] opacity-60" />
+                <div className="absolute inset-0 bg-[#E5C687]" />
 
-                <div className="relative z-10 max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 items-center py-16 px-6">
+                <div className="relative z-10 max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 items-center mt-5 mb-5">
                     {/* LEFT: Got questions? */}
-                    <div className="relative">
+                    <div className="relative -z-10">
                         {/* Paw watermark — user will replace with real image/svg */}
-                        {/* <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-15 pointer-events-none">
-                            <svg width="200" height="200" viewBox="0 0 200 200" fill="none">
-                                <circle cx="70" cy="50" r="22" fill="#8B6914" />
-                                <circle cx="130" cy="50" r="22" fill="#8B6914" />
-                                <circle cx="45" cy="100" r="20" fill="#8B6914" />
-                                <circle cx="155" cy="100" r="20" fill="#8B6914" />
-                                <ellipse cx="100" cy="140" rx="45" ry="35" fill="#8B6914" />
-                            </svg>
-                        </div> */}
+                        <div className="absolute top-1/2 left-1/2 -translate-x-[-330px] -translate-y-1/2 w-[400px] h-[400px] rotate-[-5deg] pointer-events-none">
+                            <img src={paw1} alt="" />
+                        </div>
 
                         <h2 className="text-4xl md:text-5xl font-[Talina] font-bold text-brand-dark leading-tight tracking-wider">
                             Got questions?
@@ -47,8 +42,8 @@ const MiloChat = () => {
                     </div>
 
                     {/* RIGHT: Chat Widget */}
-                    <div className="flex justify-center md:justify-end">
-                        <div className="w-full max-w-[340px] bg-white rounded-2xl shadow-xl border border-gray-200 overflow-hidden">
+                    <div className="flex justify-center md:justify-end ">
+                        <div className="w-full max-w-[340px] bg-white rounded-2xl shadow-2xl border-3 border-[#4F815E] overflow-hidden">
                             {/* Chat header */}
                             <div className="px-5 py-4 flex items-center gap-3 border-b border-gray-100">
                                 {/* Avatar placeholder — user will replace */}

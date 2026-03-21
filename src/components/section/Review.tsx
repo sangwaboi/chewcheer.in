@@ -15,10 +15,18 @@ import gas from "../../assets/gas.svg"
 import arrow1 from "../../assets/Group (1).png"
 import arrow2 from "../../assets/Group (2).png"
 import arrow3 from "../../assets/Group.png"
-import goodBacteria from "../../assets/good_bacteria.svg"
-import balance from "../../assets/balance_digestion.svg"
+import goodBacteria from "../../assets/good_bacteria.png"
+import balance from "../../assets/good_gut.png"
 import happyGut from "../../assets/happy_healthy_dog.png"
 import arrowRight from "../../assets/arroowRIght.png"
+import group5 from "../../assets/Group (5).png"
+import vector from "../../assets/Vector.png"
+import vector1 from "../../assets/Vector (1).png"
+import paw from "../../assets/Group (4).png"
+import greenPaw from "../../assets/Group (5).png"
+import greenV1 from "../../assets/Vector (2).png"
+import greenV2 from "../../assets/Vector (3).png"
+import greenV3 from "../../assets/Vector (4).png"
 
 const faqData = [
     {
@@ -61,10 +69,12 @@ const Review = () => {
             </div>
 
             <div className='mt-20 mb-20'>
+                <a href="#shop">
                 <button className='flex flex-row gap-x-2 font-[Talina] bg-[#4F815E] text-[26px] mt-10 text-white px-5 py-3 rounded-[10px] leading-[100%] tracking-0% font-light cursor-pointer'>
                     Buy chewcheer
                     <ArrowRight strokeWidth={2.5} />
                 </button>
+                </a>
             </div>
             <div className='font-[Talina] text-[40px] mt-10 text-[#C97064] leading-[100%] tracking-0% '>
                 Not all "good boys" have good guts.
@@ -75,13 +85,16 @@ const Review = () => {
 
                     {/* Gas cloud - upper left */}
                     <img src={gas} alt="" className='absolute top-[20%] left-[15%]' />
+                    <img src={greenV1} alt="" className="absolute top-[28%] left-[18%] -z-10"/>
 
                     {/* Energy battery - top center */}
                     <img src={energy} alt="" className='absolute top-[10%] left-1/2 -translate-x-1/2' />
-
+                    <img src={greenV2} alt=""  className='absolute -z-10 top-[18%] left-1/2 -translate-x-1/2'/>
+                 
                     {/* Poop - right side */}
-                    <img src={poop} alt="" className='absolute top-[38%] right-[15%]' />
-
+                    <img src={poop} alt="" className='absolute top-[38%] right-[17%]' />
+                    <img src={greenV3} alt="" className="absolute top-[46%] -z-10 right-[20%]"/>
+                 
                     {/* Arrow from gas to dog (curves down-right) */}
                     <img src={arrow3} alt="" className="absolute top-[48%] left-[30%] rotate-6" />
 
@@ -89,10 +102,11 @@ const Review = () => {
                     <img src={arrow1} alt="" className="absolute top-[35%] left-1/2 -translate-x-1/2" />
 
                     {/* Arrow from poop to dog (curves left) */}
-                    <img src={arrow2} alt="" className="absolute top-[50%] right-[32%]" />
+                    <img src={arrow2} alt="" className="absolute top-[57%] right-[33%]" />
 
-                    <div className=" w-[450px]">
+                    <div className=" w-[450px] relative">
                         <img src={sickDog} alt="" />
+                        <img src={greenPaw} alt="" className="absolute -z-10 -translate-y-102 rotate-18"/>
                     </div>
                     <span className='font-[Talina] text-[24px] text-wrap text-center text-[#4F815E] leading-[100%] tracking-0%'>
                         Most problems don't start where you see them.
@@ -112,8 +126,11 @@ const Review = () => {
                 <div className="grid grid-cols-[1fr_auto_1fr_auto_1fr] items-start gap-4">
 
                     <div className="flex flex-col items-center text-center">
-                        <div className="h-[250px] flex items-end justify-center mb-4">
-                            <img src={goodBacteria} alt="" className="max-h-full object-contain" />
+                        <div className="h-[250px] flex items-end justify-center mb-4 relative">
+                            <img src={goodBacteria} alt="" className="max-h-full object-contain"/>
+                            <div className="w-[200px] h-[180px] absolute">
+                            <img src={vector} alt="" className="absolute -z-10 -translate-y-12 translate-x-2 "/>
+                            </div>
                         </div>
                         <span className="font-[Talina] text-[24px] text-[#66261E] leading-tight mt-2">Feed Good Bacteria</span>
                         <span className="font-[Spinnaker] text-[18px] text-[#C97064] mt-1 px-4">Feeds the good bacteria your dog actually needs.</span>
@@ -125,8 +142,11 @@ const Review = () => {
                     </div>
 
                     <div className="flex flex-col items-center text-center">
-                        <div className="h-[250px] flex items-end justify-center mb-4">
-                            <img src={balance} alt="" className="max-h-full object-contain" />
+                        <div className="h-[250px] flex items-end justify-center mb-4 relative">
+                            <img src={balance} alt="" className="max-h-full object-contain sha" />
+                             <div className="w-[400px] h-[400px] absolute">
+                                <img src={paw} alt=""className="absolute -z-10 translate-y-6 rotate-18"/>
+                             </div>
                         </div>
                         <span className="font-[Talina] text-[24px] text-[#66261E] leading-tight mt-2">Balance Digestion</span>
                         <span className="font-[Spinnaker] text-[18px] text-[#C97064] mt-1 px-4">Helps digestion do its job. No drama.</span>
@@ -138,10 +158,14 @@ const Review = () => {
                     </div>
 
                     <div className="flex flex-col items-center text-center">
-                        <div className="h-[250px] flex items-end justify-center mb-4">
+                        <div className="h-[250px] flex items-end justify-center mb-4 relative ">
                             <img src={happyGut} alt="" className="max-h-full object-contain" />
+                             <div className="w-[200px] h-[180px] absolute ">
+                                <img src={vector1} alt=""className="absolute -z-10 -translate-y-20 translate-x-4"/>
+
+                             </div>
                         </div>
-                        <span className="font-[Talina] text-[24px] text-[#66261E] leading-tight mt-2">Happier, Healthier Dogs.</span>
+                        <span className="font-[Talina] text-[24px] text-[#66261E] leading-tight mt-2 text-nowrap">Happier, Healthier Dogs.</span>
                         <span className="font-[Spinnaker] text-[18px] text-[#C97064] mt-1 px-4">Less gas. Better poop. More zoomies.</span>
                         <span className="font-[Talina] text-[28px] text-[#66261E] mt-6 w-10 h-10 flex items-center justify-center rounded-full border-3 border-[#66261E]">3</span>
                     </div>
@@ -171,10 +195,16 @@ const Review = () => {
                 <div className='absolute left-30 top-1/2 -translate-y-1/2 w-[240px] h-[240px] flex items-center justify-center'>
                     <img src={saddog} alt=""/>
                 </div>
+                <div className="absolute -z-10 h-[370px] w-[370px] -translate-y-[-40px] -translate-x-[-60px] rotate-10" >
+                <img src={group5} alt="" />
+                </div>
 
                 {/* Happy dog - positioned absolutely at the right edge */}
                 <div className='absolute right-30 top-1/2 -translate-y-1/2 w-[240px] h-[240px] flex items-center justify-center'>
                     <img src={happydog} alt="" />
+                </div>
+                <div className="absolute h-[370px] w-[370px] -z-10 right-18 top-1/2 -translate-y-[66%] " >
+                <img src={group5} alt="" />
                 </div>
 
                 <div className='max-w-3xl mx-auto px-6'>
@@ -206,7 +236,7 @@ const Review = () => {
                                 <span className='text-gray-400 text-xs text-center font-[Spinnaker] relative'><img src={stick1} alt="" className=''/>
                                 <img src={round} alt="" className='absolute top-13 left-0' /></span>
                             </div>
-                            <p className='font-[Cookie] text-[20px] text-[#4F815E] mt-2'>This is where it changes</p>
+                            <p className='font-[Cookie] text-[20px] text-[#4F815E] mt-2 text-nowrap'>This is where it changes</p>
                         </div>
 
                         {/* RIGHT: After (text only) */}
@@ -236,7 +266,8 @@ const Review = () => {
             </div>
 
             {/* FAQ Accordion */}
-            <div className='w-full max-w-2xl mt-24 mb-20 px-6'>
+            <div className='w-full max-w-2xl mt-24 mb-20 px-6 relative'>
+                <img src={group5} alt="" className="absolute -z-10 -translate-y-[230px] -translate-x-[295px] rotate-[-15deg]"/>
                 <h2 className='font-[Talina] mx-auto mb-10 max-w-[min(100%,22rem)] px-4 text-center text-[26px] font-bold leading-snug tracking-wider text-black md:max-w-none md:px-0 md:text-[42px] md:leading-tight'>
                     Curious?<br />So were we.
                 </h2>

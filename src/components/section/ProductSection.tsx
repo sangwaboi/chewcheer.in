@@ -89,7 +89,6 @@ const ProductSection = () => {
               )}
             </div>
 
-            {/* 🔥 ONE TIME */}
             <div
               onClick={() => setSelectedPlan("one-time")}
               className={`mt-4 border-2 rounded-xl p-5 cursor-pointer transition-colors ${selectedPlan === "one-time" ? "border-[#66261E] bg-[#F3E1DE]" : "border-gray-200 bg-white"
@@ -107,12 +106,12 @@ const ProductSection = () => {
               </div>
             </div>
 
-            {/* 🔥 QUANTITY */}
+            {/* QUANTITY */}
             <div className="mt-6 flex min-w-0 flex-col gap-3 sm:flex-row sm:items-center">
-              <div className="flex items-center justify-center gap-4 bg-white px-4 py-2 rounded-3xl sm:justify-start">
-                <button type="button" onClick={() => setQty(Math.max(1, qty - 1))} className="min-h-[44px] min-w-[44px] cursor-pointer">-</button>
+              <div className="flex items-center justify-center gap-4 bg-white px-4 py-1 rounded-3xl sm:justify-start">
+                <button type="button" onClick={() => setQty(Math.max(1, qty - 1))} className="min-h-[42px] min-w-[44px] cursor-pointer">-</button>
                 <span>{qty}</span>
-                <button type="button" onClick={() => setQty(qty + 1)} className="min-h-[44px] min-w-[44px] cursor-pointer">+</button>
+                <button type="button" onClick={() => setQty(qty + 1)} className="min-h-[42px] min-w-[42px] cursor-pointer">+</button>
               </div>
 
               <button type="button" className="min-h-[44px] w-full flex-1 bg-[#66261E] text-white py-3 rounded-3xl cursor-pointer sm:w-auto">
@@ -122,7 +121,6 @@ const ProductSection = () => {
           </div>
         </div>
 
-        {/* 🔥 TABS */}
         <div className="mt-12 flex flex-wrap justify-center gap-x-4 gap-y-2 border-b font-bold sm:justify-around sm:gap-6">
           {tabs.map((tab) => (
             <button
@@ -137,7 +135,7 @@ const ProductSection = () => {
           ))}
         </div>
 
-        {/* 🔥 TAB CONTENT */}
+        {/* TAB CONTENT */}
         <div className="mt-6 grid md:grid-cols-2 gap-10">
 
           {activeTab === "description" && (
