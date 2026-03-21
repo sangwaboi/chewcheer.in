@@ -15,11 +15,11 @@ export function RefundPolicy() {
         be less than three days. A User may submit a claim for a refund for a purchase made, by{" "}
         <a
           className="text-[#4F815E] underline underline-offset-2"
-          href="mailto:seller+2b71683a231846a6885ebc1dffe7a47e@instamojo.com"
+          href="mailto:sangwavishvendr@gmail.com"
         >
           contacting us
         </a>{" "}
-        at seller+2b71683a231846a6885ebc1dffe7a47e@instamojo.com and providing a clear and specific reason for the
+        at sangwavishvendr@gmail.com and providing a clear and specific reason for the
         refund request, including the exact terms that have been violated, along with any proof, if required. Whether a
         refund will be provided will be determined by us, and we may ask for additional details before approving any
         requests.
