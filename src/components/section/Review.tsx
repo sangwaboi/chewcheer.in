@@ -236,7 +236,7 @@ const Review = () => {
                                 <span className='text-gray-400 text-xs text-center font-[Spinnaker] relative'><img src={stick1} alt="" className=''/>
                                 <img src={round} alt="" className='absolute top-13 left-0' /></span>
                             </div>
-                            <p className='font-[Cookie] text-[20px] text-[#4F815E] mt-2'>This is where it changes</p>
+                            <p className='font-[Cookie] text-[20px] text-[#4F815E] mt-2 text-nowrap'>This is where it changes</p>
                         </div>
 
                         {/* RIGHT: After (text only) */}
