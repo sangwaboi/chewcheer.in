@@ -11,9 +11,9 @@ export function ShippingPolicy() {
         date of delivery, you must promptly reach out to us at{" "}
         <a
           className="text-[#4F815E] underline underline-offset-2"
-          href="mailto:seller+2b71683a231846a6885ebc1dffe7a47e@instamojo.com"
+          href="mailto:sangwavishvendr@gmail.com"
         >
-          seller+2b71683a231846a6885ebc1dffe7a47e@instamojo.com
+          sangwavishvendr@gmail.com
         </a>
         .
       </p>
