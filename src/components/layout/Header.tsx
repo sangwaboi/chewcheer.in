@@ -7,9 +7,9 @@ const Header = () => {
           <img src={logo} alt="logo" className="h-auto max-h-12 w-auto shrink-0 object-contain sm:max-h-14 md:max-h-none" />
         </div>
 
-        <button type="button" className="ml-auto shrink-0 rounded-[10px] bg-white px-3 py-2 text-xs font-bold text-[#4F815E] shadow-sm cursor-pointer transition-all hover:text-[#22422b] sm:px-5 sm:py-3 sm:text-sm md:order-3 md:ml-0">
+        <a href="#shop" className="ml-auto shrink-0 rounded-[10px] bg-white px-3 py-2 text-xs font-bold text-[#4F815E] shadow-sm no-underline cursor-pointer transition-all hover:text-[#22422b] sm:px-5 sm:py-3 sm:text-sm md:order-3 md:ml-0">
           Subscribe & Save 10%
-        </button>
+        </a>
 
         <nav className="mt-2 flex w-full basis-full flex-wrap items-center justify-center gap-x-3 gap-y-2 text-xs font-medium md:order-2 md:mt-0 md:flex-1 md:basis-auto md:justify-center md:gap-8 md:text-sm">
           <a href="#shop" className="text-white transition-colors hover:text-brand-yellow">Shop</a>
