@@ -6,12 +6,6 @@ const Hero = () => {
   return (
     <section className="relative w-full min-h-screen min-w-0 overflow-hidden">
 
-      {/* 🐾 MANY PAWS — desktop = original positions; mobile = tighter */}
-      {/* <img src={paw} className="absolute top-20 left-10 w-32  max-md:left-4 max-md:w-24" alt="" />
-      <img src={paw} className="absolute top-40 right-20 w-24 opacity-10 rotate-12 max-md:right-4 max-md:w-20" alt="" />
-      <img src={paw} className="absolute bottom-40 left-20 w-40 opacity-10 rotate-6 max-md:hidden md:block" alt="" />
-      <img src={paw} className="absolute top-1/2 right-10 w-28 opacity-10 -rotate-12 max-md:right-4 max-md:w-24" alt="" /> */}
-
       {/*  MAIN GRID */}
       <div className="relative z-10 flex h-full w-full min-w-0 items-center justify-center max-md:px-3 md:px-0">
 
@@ -63,7 +57,7 @@ const Hero = () => {
                   tummy deserves better.
                 </span>
               </div>
-              <div className="absolute right-[-90px] bottom-[40px]">
+              <div className="absolute right-[-90px] bottom-[40px] -z-10">
                 <svg width="153" height="89" viewBox="0 0 153 89" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path
                     d="M3.2797 53.9654L15.0517 47.5627M3.2797 53.9654L1.49657 39.8401M3.2797 53.9654C19.7058 15.1125 66.5983 -14.4403 100.438 10.9934C134.278 36.4271 101.72 85.5633 85.8583 71.7868C69.9944 58.0109 100.934 28.8681 120.706 33.7038C140.478 38.5398 141.963 57.2327 136.108 72.4394C130.253 87.646 118.059 89.9981 116.812 82.236C115.564 74.4719 136.881 68.3159 150.757 86.5422"
@@ -77,10 +71,10 @@ const Hero = () => {
             </div>
           </div>
 
-          <div className="absolute bottom-[100px] right-[-60px] hidden flex flex-col items-start gap-3 md:flex">
+          <div className="absolute cursor-pointer z-10 bottom-[100px] right-[-60px] hidden flex flex-col items-start gap-3 md:flex">
             <a href="#shop">
-              <div className="flex items-center gap-2 rounded-xl bg-[#4F815E] px-6 py-3 font-extrabold no-underline cursor-pointer">
-                <button className="font-[Talina] text-[26px] tracking-wider text-white">Buy chewcheer</button>
+              <div className="flex items-center gap-2 rounded-xl bg-[#4F815E] px-6 py-3 font-extrabold no-underline ">
+                <button className="font-[Talina] text-[26px] tracking-wider text-white cursor-pointer">Buy chewcheer</button>
                 <ArrowRight color="#fff" aria-hidden />
               </div>
             </a>
