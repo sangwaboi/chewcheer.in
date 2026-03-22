@@ -1,2 +1,5 @@
-# SPA fallback (Netlify, Cloudflare Pages, etc.)
-/*    /index.html   200
+# Netlify Functions API routing
+/api/*    /.netlify/functions/:splat    200
+
+# SPA fallback — must come after API routes
+/*        /index.html                   200

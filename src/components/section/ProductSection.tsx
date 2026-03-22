@@ -1,12 +1,80 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import product from "../../assets/ChatGPT Image Mar 17, 2026, 05_42_26 PM 2.png";
 import plant from "../../assets/ChatGPT Image Mar 17, 2026, 01_58_04 AM 2.svg";
 
 const ProductSection = () => {
+  const navigate = useNavigate();
   const [selectedPlan, setSelectedPlan] = useState<"subscribe" | "one-time">("subscribe");
   const [qty, setQty] = useState(1);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
   const tabs = ["description", "ingredients", "feeding", "details"]
   const [activeTab, setActiveTab] = useState("description");
+
+  const handleCheckout = async () => {
+    if (loading) return;
+    setLoading(true);
+    setError(null);
+
+    try {
+      const res = await fetch("/api/create-order", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ plan: selectedPlan, quantity: qty }),
+      });
+
+      if (!res.ok) {
+        const data = await res.json().catch(() => ({}));
+        throw new Error(data.error || "Failed to create order");
+      }
+
+      const { order_id, amount, currency, key_id } = await res.json();
+
+      if (!window.Razorpay) {
+        throw new Error("Payment system is loading. Please refresh and try again.");
+      }
+
+      const rzp = new window.Razorpay({
+        key: key_id,
+        amount,
+        currency,
+        name: "ChewCheer",
+        description: `Prebiotic Inulin Sticks × ${qty}`,
+        image: "/favicon.jpg",
+        order_id,
+        handler: async (response) => {
+          try {
+            const verifyRes = await fetch("/api/verify-payment", {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify(response),
+            });
+            if (verifyRes.ok) {
+              navigate(`/checkout/success?payment_id=${response.razorpay_payment_id}`);
+            } else {
+              setError("Payment verification failed. Please contact support.");
+            }
+          } catch {
+            setError("Could not verify payment. Please contact support.");
+          }
+          setLoading(false);
+        },
+        theme: { color: "#4F815E" },
+        modal: { ondismiss: () => setLoading(false) },
+      });
+
+      rzp.on("payment.failed", (resp) => {
+        setError(resp.error.description || "Payment failed. Please try again.");
+        setLoading(false);
+      });
+
+      rzp.open();
+    } catch (err) {
+      setError(err instanceof Error ? err.message : "Something went wrong");
+      setLoading(false);
+    }
+  };
 
   return (
     <section id="shop" className="w-full bg-[#F5F5F5] py-20 px-6 font-[Spinnaker]">
@@ -106,7 +174,7 @@ const ProductSection = () => {
               </div>
             </div>
 
-            {/* QUANTITY */}
+            {/* QUANTITY + CHECKOUT */}
             <div className="mt-6 flex min-w-0 flex-col gap-3 sm:flex-row sm:items-center">
               <div className="flex items-center justify-center gap-4 bg-white px-4 py-1 rounded-3xl sm:justify-start">
                 <button type="button" onClick={() => setQty(Math.max(1, qty - 1))} className="min-h-[42px] min-w-[44px] cursor-pointer">-</button>
@@ -114,10 +182,19 @@ const ProductSection = () => {
                 <button type="button" onClick={() => setQty(qty + 1)} className="min-h-[42px] min-w-[42px] cursor-pointer">+</button>
               </div>
 
-              <button type="button" className="min-h-[44px] w-full flex-1 bg-[#66261E] text-white py-3 rounded-3xl cursor-pointer sm:w-auto">
-                Add to cart
+              <button
+                type="button"
+                onClick={handleCheckout}
+                disabled={loading}
+                className="min-h-[44px] w-full flex-1 bg-[#66261E] text-white py-3 rounded-3xl cursor-pointer sm:w-auto disabled:opacity-60 disabled:cursor-not-allowed"
+              >
+                {loading ? "Processing…" : "Buy now"}
               </button>
             </div>
+
+            {error && (
+              <p className="mt-3 text-sm text-red-600 font-medium">{error}</p>
+            )}
           </div>
         </div>
 
