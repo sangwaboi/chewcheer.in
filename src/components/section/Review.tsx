@@ -1,5 +1,5 @@
 
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { ArrowRight, ChevronUp, ChevronDown,ChevronLeft,ChevronRight } from 'lucide-react'
 import yellowBg from "../../assets/yellowBg.svg"
 import stick from "../../assets/stick.png"
@@ -60,6 +60,15 @@ const Review = () => {
 
     const [img,setImg]=useState<string[]>(arrImgs)
 
+    useEffect(()=>{
+        const autoPlayId: number = window.setInterval(() => {
+            moveRight();
+        }, 3000);
+
+        return () => {
+            window.clearInterval(autoPlayId);
+        };
+    },[])
     const moveLeft=()=>{
         setImg(prev=>{
             const newArr:string[]=[...prev]
