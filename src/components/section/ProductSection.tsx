@@ -106,7 +106,6 @@ const ProductSection = () => {
               Prebiotic Inulin Sticks
             </h2>
 
-            {/* rating */}
             <div className="flex items-center gap-2 mt-2">
               ⭐⭐⭐⭐⭐ <span className="text-sm">4.8 (190 reviews)</span>
             </div>
@@ -115,7 +114,7 @@ const ProductSection = () => {
               A simple chew that does more than just taste good...
             </p>
 
-            {/* 🔥 SUBSCRIBE (RADIO) */}
+            {/* SUBSCRIBE (RADIO) */}
             <div
               onClick={() => setSelectedPlan("subscribe")}
               className={`mt-6 border-2 rounded-xl p-5 cursor-pointer transition-colors ${selectedPlan === "subscribe" ? "border-[#66261E] bg-[#F3E1DE]" : "border-gray-200 bg-white"

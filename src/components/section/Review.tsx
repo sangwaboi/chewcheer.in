@@ -1,6 +1,6 @@
-import review from "../../assets/Frame 40.png"
+
 import { useState } from 'react'
-import { ArrowRight, ChevronUp, ChevronDown } from 'lucide-react'
+import { ArrowRight, ChevronUp, ChevronDown,ChevronLeft,ChevronRight } from 'lucide-react'
 import yellowBg from "../../assets/yellowBg.svg"
 import stick from "../../assets/stick.png"
 import ingredients from "../../assets/ingridients.png"
@@ -27,6 +27,9 @@ import greenPaw from "../../assets/Group (5).png"
 import greenV1 from "../../assets/Vector (2).png"
 import greenV2 from "../../assets/Vector (3).png"
 import greenV3 from "../../assets/Vector (4).png"
+import milo from "../../assets/milo.svg"
+import max from "../../assets/max.svg"
+import coco from "../../assets/coco.svg"
 
 const faqData = [
     {
@@ -50,22 +53,64 @@ const faqData = [
         answer: "ChewCheer is recommended for dogs 6 months and older. For younger puppies, please consult your veterinarian first."
     },
 ];
+const arrImgs=[milo,max,coco,]
 
 const Review = () => {
     const [openIndex, setOpenIndex] = useState<number | null>(null);
 
+    const [img,setImg]=useState<string[]>(arrImgs)
+
+    const moveLeft=()=>{
+        setImg(prev=>{
+            const newArr:string[]=[...prev]
+            const startImg:string|undefined=newArr.shift()
+            if(startImg!==undefined){
+                newArr.push(startImg)
+            }
+            
+            return newArr
+        })
+    }
+    const moveRight=()=>{
+        setImg(prev=>{
+            const newArr:string[]=[...prev]
+            const lastImg:string|undefined=newArr.pop()
+            if(lastImg!==undefined)newArr.unshift(lastImg)
+            return newArr
+        })
+        
+    }
     const toggleFaq = (index: number) => {
         setOpenIndex(openIndex === index ? null : index);
     };
 
     return (
         <div className='flex justify-center items-center flex-col mt-20 w-full min-w-0'>
-            <h2 className='font-[Talina] mb-2 max-w-[min(100%,22rem)] px-4 text-center text-[26px] leading-snug tracking-0% text-[#C97064] md:mb-5 md:max-w-none md:px-0 md:text-[40px] md:leading-[100%]'>
-                Trusted by happy dogs everywhere
-            </h2>
-            <img src={review} alt="" className="mt-10 max-w-full h-auto" />
-            <div className='font-[Talina] mt-20 max-w-[min(100%,22rem)] px-4 text-center text-[26px] leading-snug text-[#C97064] tracking-0% md:max-w-none md:px-0 md:text-[40px] md:leading-[100%]'>
-                because every dog deserves a happy gut
+            <div>
+                <h2 className='font-[Talina] mb-2 max-w-[min(100%,22rem)] px-4 text-center text-[26px] leading-snug tracking-0% text-[#C97064] md:mb-5 md:max-w-none md:px-0 md:text-[40px] md:leading-[100%]'>
+                    Trusted by happy dogs everywhere
+                </h2>
+                <div className='flex flex-row items-center gap-x-5 mt-20 mb-20'>
+                    <div className='cursor-pointer' onClick={moveLeft}>
+                        <ChevronLeft strokeWidth={5} color='#66261E'/>
+                    </div>
+                        <div className='flex flex-row items-center w-[1150px] overflow-hidden'>
+
+                        {
+                            img.map((img)=>(
+                                <img src={img} key={img} className='w-[380px] h-[480px] transition-all duration-300 hover:scale-104'/>
+                            ))                          
+                        }
+                        </div>
+                    
+                    <div className='cursor-pointer' onClick={moveRight}>
+                        <ChevronRight strokeWidth={5} color='#66261E'/>
+                    </div>
+                </div>
+                <div className='font-[Talina] mt-20 max-w-[min(100%,22rem)] px-4 text-center text-[26px] leading-snug text-[#C97064] tracking-0% md:max-w-none md:px-0 md:text-[40px] md:leading-[100%]'>
+                    because every dog deserves a happy gut
+                </div>
+
             </div>
 
             <div className='mt-20 mb-20'>
@@ -80,7 +125,7 @@ const Review = () => {
                 Not all "good boys" have good guts.
             </div>
             {/* Health reason */}
-            <div className="relative w-full bg-transparent h-screen mt-[-100px] mb-30">
+            <div className="relative w-full bg-transparent h-screen mt-10 mb-30">
                 <div className="flex justify-end items-center h-full flex-col">
 
                     {/* Gas cloud - upper left */}
@@ -118,7 +163,7 @@ const Review = () => {
             </div>
 
             {/* Health benefits */}
-            <div className="border-5 bg-[#E5C68761] border-[#66261E] w-7xl h-fit rounded-[44px] px-10 py-10">
+            <div className="border-5 bg-[#E5C68761] border-[#66261E] w-7xl h-fit rounded-[44px] mt-16 px-10 py-10">
                 <div className='font-[Talina] text-[40px] mb-10 text-[#66261E] leading-[100%] tracking-0% text-center'>
                     A Happier Gut In 3 Simple Steps
                 </div>

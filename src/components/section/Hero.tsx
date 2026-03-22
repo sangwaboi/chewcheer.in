@@ -1,4 +1,4 @@
-import paw from '../../assets/Group-1.svg'
+
 import product from '../../assets/Group 11.svg'
 import { ArrowRight } from 'lucide-react';
 import tick from '../../assets/bitcoin-icons_check-filled.png'
@@ -7,15 +7,15 @@ const Hero = () => {
     <section className="relative w-full min-h-screen min-w-0 overflow-hidden">
 
       {/* 🐾 MANY PAWS — desktop = original positions; mobile = tighter */}
-      <img src={paw} className="absolute top-20 left-10 w-32 opacity-10 max-md:left-4 max-md:w-24" alt="" />
+      {/* <img src={paw} className="absolute top-20 left-10 w-32  max-md:left-4 max-md:w-24" alt="" />
       <img src={paw} className="absolute top-40 right-20 w-24 opacity-10 rotate-12 max-md:right-4 max-md:w-20" alt="" />
       <img src={paw} className="absolute bottom-40 left-20 w-40 opacity-10 rotate-6 max-md:hidden md:block" alt="" />
-      <img src={paw} className="absolute top-1/2 right-10 w-28 opacity-10 -rotate-12 max-md:right-4 max-md:w-24" alt="" />
+      <img src={paw} className="absolute top-1/2 right-10 w-28 opacity-10 -rotate-12 max-md:right-4 max-md:w-24" alt="" /> */}
 
-      {/* 🎯 MAIN GRID */}
+      {/*  MAIN GRID */}
       <div className="relative z-10 flex h-full w-full min-w-0 items-center justify-center max-md:px-3 md:px-0">
 
-        {/* 🟢 CENTER — mobile: constrained column + stacked CTA; md+: original centered hero */}
+        {/*  CENTER — mobile: constrained column + stacked CTA; md+: original centered hero */}
         <div className="relative flex w-full max-w-[min(100%,32rem)] flex-col items-center text-center md:w-auto md:max-w-none">
 
           <h1 className="mt-3 px-1 font-[Talina] font-semi-bold text-shadow-lg text-white max-md:text-4xl max-md:whitespace-normal md:px-0 md:text-6xl md:whitespace-nowrap lg:text-7xl">
