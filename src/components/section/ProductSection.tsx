@@ -130,8 +130,8 @@ const ProductSection = () => {
                   <span className="bg-[#66261E] text-white text-xs font-bold px-3 py-1 rounded-md">SAVE 10%</span>
                 </div>
                 <div className="flex shrink-0 items-center gap-2 sm:ml-auto">
-                  <span className="text-sm text-gray-400 line-through">₹369</span>
-                  <span className="text-2xl font-bold">₹332</span>
+                  <span className="text-sm text-gray-400 line-through">₹500</span>
+                  <span className="text-2xl font-bold">₹450</span>
                 </div>
               </div>
 
@@ -169,7 +169,7 @@ const ProductSection = () => {
                   </span>
                   <span className="text-lg font-bold">One-Time Purchase</span>
                 </div>
-                <span className="text-2xl font-bold sm:ml-auto">₹369</span>
+                <span className="text-2xl font-bold sm:ml-auto">₹500</span>
               </div>
             </div>
 
@@ -187,7 +187,7 @@ const ProductSection = () => {
                 disabled={loading}
                 className="min-h-[44px] w-full flex-1 bg-[#66261E] text-white py-3 rounded-3xl cursor-pointer sm:w-auto disabled:opacity-60 disabled:cursor-not-allowed"
               >
-                {loading ? "Processing…" : "Buy now"}
+                {loading ? "Processing…" : "Pre Order"}
               </button>
             </div>
 

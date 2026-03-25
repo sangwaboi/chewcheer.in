@@ -34,7 +34,7 @@ const Countdown = () => {
         <div className="w-full bg-[#E8F0DC] text-center py-2 font-[Spinnaker] text-sm text-brand-dark">
             countdown timer ends in <span className="font-bold">{formatTime()}</span>
             {' '}&nbsp;
-            <a href="#shop" className="font-bold hover:underline cursor-pointer">Buy now!</a>
+            <a href="#shop" className="font-bold hover:underline cursor-pointer">Pre order now!</a>
         </div>
     );
 };
