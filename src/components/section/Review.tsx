@@ -125,7 +125,7 @@ const Review = () => {
             <div className='mt-20 mb-20'>
                 <a href="#shop">
                 <button className='flex flex-row gap-x-2 font-[Talina] bg-[#4F815E] text-[26px] mt-10 text-white px-5 py-3 rounded-[10px] leading-[100%] tracking-0% font-light cursor-pointer'>
-                    Buy chewcheer
+                    Pre order chewcheer
                     <ArrowRight strokeWidth={2.5} />
                 </button>
                 </a>
@@ -311,7 +311,7 @@ const Review = () => {
                     <div className='flex justify-center mt-30 '>
                         <a href="#shop">
                             <button className='flex flex-row items-center gap-x-2 font-[Talina] bg-[#4F815E] text-[26px] text-white px-6 py-3 rounded-[10px] leading-[100%] tracking-0% font-light cursor-pointer'>
-                                Buy chewcheer
+                                Pre order chewcheer
                                 <ArrowRight strokeWidth={2.5} />
                             </button>
                         </a>

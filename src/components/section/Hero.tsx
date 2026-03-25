@@ -36,7 +36,7 @@ const Hero = () => {
               href="#shop"
               className="flex items-center gap-2 rounded-xl bg-[#4F815E] px-6 py-3 font-extrabold no-underline"
             >
-              <span className="font-[Talina] text-xl tracking-wider text-white sm:text-[26px]">Buy chewcheer</span>
+              <span className="font-[Talina] text-xl tracking-wider text-white sm:text-[26px]">Pre order chewcheer</span>
               <ArrowRight color="#fff" aria-hidden />
             </a>
             <ul className="text-left font-[Spinnaker] text-sm text-[#4F815E] sm:text-base">
@@ -71,10 +71,10 @@ const Hero = () => {
             </div>
           </div>
 
-          <div className="absolute cursor-pointer z-10 bottom-[100px] right-[-60px] hidden flex flex-col items-start gap-3 md:flex">
+          <div className="absolute cursor-pointer z-10 bottom-[100px] right-[-160px] hidden flex flex-col items-start gap-3 md:flex">
             <a href="#shop">
               <div className="flex items-center gap-2 rounded-xl bg-[#4F815E] px-6 py-3 font-extrabold no-underline ">
-                <button className="font-[Talina] text-[26px] tracking-wider text-white cursor-pointer">Buy chewcheer</button>
+                <button className="font-[Talina] text-[26px] tracking-wider text-white cursor-pointer">Pre order chewcheer</button>
                 <ArrowRight color="#fff" aria-hidden />
               </div>
             </a>
